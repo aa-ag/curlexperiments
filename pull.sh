@@ -10,4 +10,4 @@ do
 	--header 'X-RapidAPI-Key: '$KEY > 'files/jsons/result'$YEAR'.json'
     ((YEAR++))
 done
-echo "Done."
+echo "Done pulling."
