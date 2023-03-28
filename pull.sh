@@ -1,18 +1,13 @@
 #!/bin/bash
 source .env
 
-# createdb "test"
-# database="test"
-# psql -d $database -c "CREATE TABLE IF NOT EXISTS teams(id SERIAL, data JSONB);"
-
-YEAR=2017
-while [ $YEAR -le 2019 ]
+YEAR=2011
+while [ $YEAR -le 2021 ]
 do
-    response="$(curl --request GET \
+    curl --request GET \
 	--url 'https://mlb-data.p.rapidapi.com/json/named.team_all_season.bam?season='\'$YEAR\''&all_star_sw='\''N'\''&sort_order=name_asc' \
 	--header 'X-RapidAPI-Host: mlb-data.p.rapidapi.com' \
-	--header 'X-RapidAPI-Key: '$KEY)"
-    echo $response
+	--header 'X-RapidAPI-Key: '$KEY > 'files/jsons/result'$YEAR'.json'
     ((YEAR++))
 done
 echo "Done."
