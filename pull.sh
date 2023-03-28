@@ -1,6 +1,4 @@
 #!/bin/bash
-source .env
-
 YEAR=2011
 while [ $YEAR -le 2021 ]
 do
