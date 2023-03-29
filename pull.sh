@@ -26,4 +26,5 @@ do
 done
 # 4. Let the user know this is done running
 echo "Done."
+# 5. Delete all jsons wich have been duplicated tabularly
 rm -r 'files/jsons'
