@@ -22,8 +22,8 @@ do
 	# 3.3. Copy CSV to Postgres DB
 	psql -d "mlbdb" -c "\COPY teams FROM 'files/csvs/result$YEAR.csv' DELIMITER ',' CSV HEADER;"
 	# aws s3 cp ... ...
-	rm 'files/jsons/result'$YEAR'.json'
 	((YEAR++))
 done
 # 4. Let the user know this is done running
 echo "Done."
+rm -r 'files/jsons'
