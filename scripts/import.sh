@@ -1,8 +1,6 @@
 #!/bin/bash
 source ../.env
 
-mkdir ../temp/csvs
-
 PAGENUMBER=1
 EPOCH=0
 END_OF_STREAM=false
