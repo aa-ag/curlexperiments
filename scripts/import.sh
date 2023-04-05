@@ -20,9 +20,9 @@ do
     ((PAGENUMBER++))
 done
 
-# aws s3 cp ... ... -r
-rm -r ../temp/csvs
-
 psql -d "raw_db" -c "CREATE TABLE t_stagin AS SELECT * FROM t_raw;"
+psql -d "raw_db" -c "\COPY SELECT * FROM t_raw TO /...;"
+# aws s3 cp ... ...
+rm -r ../temp/csvs
 
 echo "Done."
