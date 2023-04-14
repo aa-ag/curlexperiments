@@ -1,5 +1,5 @@
 #!/bin/bash
-dialog --checklist "Choose toppings:" 10 40 3 \
+read dialog --checklist "Choose toppings:" 10 40 3 \
         1 setup off \
         2 database off \
         3 import off
