@@ -20,7 +20,8 @@ done
 
 psql -d "raw_db" -c "CREATE TABLE t_stagin AS SELECT * FROM t_raw;"
 psql -d "raw_db" -c "\COPY SELECT * FROM t_raw TO /...;"
-# aws s3 cp ... ...
+#  zip ../temp/csvs 
+# aws s3 cp ../temp/csvs ... -r
 rm -r ../temp/csvs
 
 echo "Done."
